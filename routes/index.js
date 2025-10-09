@@ -1,14 +1,17 @@
-var express = require('express');
-var router = express.Router();
-const crypto = require('crypto');
-const bcrypt = require('bcrypt');
+import { Buffer } from 'buffer';
+
+import express from 'express';
+const router = express.Router();
+
+import crypto from 'crypto';
+import bcrypt from 'bcrypt';
 
 router.use(express.json());
 const key = crypto.randomBytes(32); // Genera una clave de 32 bytes (256 bits)
 const iv = crypto.randomBytes(16);  // Genera un IV de 16 bytes
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res, /*next*/) {
   res.render('index', { title: 'Express' });
 });
 
@@ -244,4 +247,4 @@ router.post('/bcrypt', (req, res) => {
 });
 
 
-module.exports = router;
+export default router;
