@@ -1,7 +1,7 @@
 import js from "@eslint/js";
 import globals from "globals";
 import { defineConfig } from "eslint/config";
-import e from "express";
+
 
 export default defineConfig([
   {
